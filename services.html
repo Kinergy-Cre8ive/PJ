@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services - Landscaping Project</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <style>
+    /* Hero Section Styling */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 120px 20px;
+      background-image: url('images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      animation: fadeIn 1s ease-out;
+      background-color: rgba(0, 0, 0, 0.5); /* Adding overlay */
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.8rem;
+      font-weight: lighter;
+      opacity: 0.8;
+      margin-bottom: 30px;
+      animation: fadeIn 1.5s ease-out 0.2s;
+    }
+
+    /* Services Section Styling */
+    .services {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 50px auto;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .service-item {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 18px rgba(0, 180, 255, 0.4);
+    }
+
+    .service-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .service-item h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .service-item p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* CTA Section Styling */
+    .cta {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #0072ff;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin: 30px auto;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .cta .btn {
+      background-color: #ffcc00;
+      color: #333;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta .btn:hover {
+      background-color: #ff9900;
+      transform: scale(1.05);
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      margin-top: 30px;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>=
+
+  <!-- Hero Section with Background Image -->
+  <header class="hero">
+    <h1>Our Landscaping Services</h1>
+    <p>We offer a range of professional landscaping services to enhance your outdoor space.</p>
+  </header>
+
+  <!-- Services Offered Section -->
+  <section class="services">
+    <div class="service-item">
+      <img src="images/lawn-care.jpg" alt="Lawn Care" />
+      <h3>Lawn Care</h3>
+      <p>Keep your lawn lush and healthy with our expert lawn care services.</p>
+    </div>
+    <div class="service-item">
+      <img src="images/garden-design.jpg" alt="Garden Design" />
+      <h3>Garden Design</h3>
+      <p>Transform your outdoor space with a personalized garden design.</p>
+    </div>
+    <div class="service-item">
+      <img src="images/tree-trimming.jpg" alt="Tree Trimming" />
+      <h3>Tree Trimming</h3>
+      <p>Ensure the health and beauty of your trees with our trimming services.</p>
+    </div>
+  </section>
+
+  <!-- Contact Us Button -->
+  <section class="cta">
+    <h2>Get in Touch</h2>
+    <p>If you're interested in any of our services, feel free to contact us for a free consultation!</p>
+    <a href="Contact.html" class="btn">Contact Us</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Landscaping Project. All Rights Reserved.</p>
+  </footer>
+<script>
+  const services = document.querySelectorAll('.service');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  services.forEach(service => {
+    observer.observe(service);
+  });
+</script>
+  <script>
+  const services = document.querySelectorAll('.service');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      } else {
+        entry.target.classList.remove('in-view'); // allows re-trigger
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  services.forEach(service => {
+    observer.observe(service);
+  });
+</script>
+
+</body>
+
+</html>

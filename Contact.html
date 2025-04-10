@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    #popupMessage {
+      display: none;
+      background-color: #dff0d8;
+      color: #3c763d;
+      padding: 20px;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #3c763d;
+      border-radius: 10px;
+      max-width: 500px;
+    }
+
+    .popup-show {
+      display: block;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <!-- Form -->
+  <main>
+    <form id="contactForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <!-- Popup Message -->
+  <div id="popupMessage">
+    <h2>Thank You!</h2>
+    <p>Your message has been sent (kind of 😉)</p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const popup = document.getElementById('popupMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      popup.classList.add('popup-show');
+      form.reset();
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Landscaping Co. All rights reserved.</p>
+  </footer>
+</body>
+</html>
